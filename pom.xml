@@ -32,9 +32,9 @@
     <version.maven-bundle-plugin>2.3.7</version.maven-bundle-plugin>
 
     <!-- configure the versions you want to use here -->
-    <fabric8.version>2.3.2</fabric8.version>
-    <cxf.version>3.1.9</cxf.version>
-    <karaf.version>4.0.8</karaf.version>
+    <fabric8.version>2.3.0.fuse-000030</fabric8.version>
+    <cxf.plugin.version>3.1.9</cxf.plugin.version>
+    <karaf.plugin.version>4.2.0.fuse-000083</karaf.plugin.version>
 
     <!-- maven plugin versions -->
     <fabric8.maven.plugin.version>3.5.17</fabric8.maven.plugin.version>
@@ -48,7 +48,7 @@
       <!-- import fabric8 platform bom first -->
       <dependency>
         <groupId>io.fabric8</groupId>
-        <artifactId>fabric8-project-bom-with-platform-deps</artifactId>
+        <artifactId>fabric8-project-bom-fuse-karaf</artifactId>
         <version>${fabric8.version}</version>
         <type>pom</type>
         <scope>import</scope>
@@ -60,36 +60,33 @@
     <dependency>
       <groupId>org.apache.karaf.features</groupId>
       <artifactId>framework</artifactId>
-      <version>${karaf.version}</version>
+      <version>${karaf.plugin.version}</version>
       <type>kar</type>
     </dependency>
     <!-- cxf -->
     <dependency>
       <groupId>org.apache.cxf</groupId>
       <artifactId>cxf-core</artifactId>
-      <version>${cxf.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.cxf</groupId>
       <artifactId>cxf-rt-transports-http</artifactId>
-      <version>${cxf.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.cxf</groupId>
       <artifactId>cxf-rt-frontend-jaxrs</artifactId>
-      <version>${cxf.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.cxf</groupId>
       <artifactId>cxf-rt-rs-service-description</artifactId>
-      <version>${cxf.version}</version>
+      <version>3.1.11.fuse-000084</version>
     </dependency>
 
     <!-- swagger -->
     <dependency>
       <groupId>io.swagger</groupId>
       <artifactId>swagger-jaxrs</artifactId>
-      <version>1.5.10</version>
+      <version>1.5.12</version>
       <optional>true</optional>
       <exclusions>
         <!-- avoid this old dependency which breaks CXF -->
@@ -99,37 +96,21 @@
         </exclusion>
       </exclusions>
     </dependency>
+
+    <!-- Karaf microcontainer dependencies -->
     <dependency>
-      <groupId>org.apache.karaf.features</groupId>
-      <artifactId>framework</artifactId>
-      <classifier>features</classifier>
-      <version>${karaf.version}</version>
-      <type>xml</type>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.karaf.features</groupId>
-      <artifactId>standard</artifactId>
-      <classifier>features</classifier>
-      <version>${karaf.version}</version>
-      <type>xml</type>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.karaf.features</groupId>
-      <artifactId>enterprise</artifactId>
-      <classifier>features</classifier>
-      <version>${karaf.version}</version>
-      <type>xml</type>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.cxf.karaf</groupId>
-      <artifactId>apache-cxf</artifactId>
-      <classifier>features</classifier>
-      <version>${cxf.version}</version>
-      <type>xml</type>
-      <scope>compile</scope>
+      <!-- scope is compile so all features (there is only one) are installed into startup.properties,
+      and the feature repo itself is not added in etc/org.apache.karaf.features.cfg file -->
+      <groupId>org.jboss.fuse</groupId>
+      <artifactId>fuse-karaf-framework</artifactId>
+      <type>kar</type>
+      <!-- no need to download kar dependencies -->
+      <exclusions>
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>io.fabric8</groupId>
@@ -198,10 +179,10 @@
               io.swagger.jaxrs.listing,
               io.swagger.annotations,
               org.apache.cxf.transport.http,
-              com.fasterxml.jackson.annotation;version="[2.6,3)",
-              com.fasterxml.jackson.core;version="[2.6,3)",
-              com.fasterxml.jackson.databind;version="[2.6,3)",
-              com.fasterxml.jackson.jaxrs.json;version="[2.6,3)",
+              com.fasterxml.jackson.annotation,
+              com.fasterxml.jackson.core,
+              com.fasterxml.jackson.databind,
+              com.fasterxml.jackson.jaxrs.json,
               *
             </Import-Package>
             <Export-Package>
@@ -213,7 +194,7 @@
       <plugin>
         <groupId>org.apache.cxf</groupId>
         <artifactId>cxf-java2wadl-plugin</artifactId>
-        <version>${cxf.version}</version>
+        <version>${cxf.plugin.version}</version>
         <executions>
           <execution>
             <id>parsejavadoc</id>
@@ -273,7 +254,7 @@
       <plugin>
         <groupId>org.apache.karaf.tooling</groupId>
         <artifactId>karaf-maven-plugin</artifactId>
-        <version>${karaf.version}</version>
+        <version>${karaf.plugin.version}</version>
         <extensions>true</extensions>
         <executions>
           <execution>
@@ -291,13 +272,11 @@
           <!-- do not include build output directory -->
           <includeBuildOutputDirectory>false</includeBuildOutputDirectory>
           <startupFeatures>
-            <feature>framework</feature>
             <feature>jaas</feature>
             <feature>aries-blueprint</feature>
             <feature>cxf-jaxrs</feature>
-            <feature>fabric8-karaf-checks</feature>
-            <feature>cxf-jackson</feature>
             <feature>cxf-rs-description-swagger2</feature>
+            <feature>fabric8-karaf-checks</feature>
           </startupFeatures>
           <startupBundles>
             <bundle>mvn:${project.groupId}/${project.artifactId}/${project.version}</bundle>
