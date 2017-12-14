@@ -32,9 +32,9 @@
     <version.maven-bundle-plugin>2.3.7</version.maven-bundle-plugin>
 
     <!-- configure the versions you want to use here -->
-    <fabric8.version>2.3.0.fuse-000030</fabric8.version>
-    <cxf.plugin.version>3.1.9</cxf.plugin.version>
-    <karaf.plugin.version>4.2.0.fuse-000083</karaf.plugin.version>
+    <fabric8.version>2.3.7.fuse-000014</fabric8.version>
+    <cxf.plugin.version>3.1.11.fuse-000168</cxf.plugin.version>
+    <karaf.plugin.version>4.2.0.fuse-000167</karaf.plugin.version>
 
     <!-- maven plugin versions -->
     <fabric8.maven.plugin.version>3.5.17</fabric8.maven.plugin.version>
@@ -79,7 +79,7 @@
     <dependency>
       <groupId>org.apache.cxf</groupId>
       <artifactId>cxf-rt-rs-service-description</artifactId>
-      <version>3.1.11.fuse-000084</version>
+      <version>${cxf.plugin.version}</version>
     </dependency>
 
     <!-- swagger -->
