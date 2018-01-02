@@ -75,7 +75,6 @@ You can also access the XML representation for order 123 ...
 
 **Note:** if you use Safari, you will only see the text elements but not the XML tags - you can view the entire document with 'View Source'
 
-
 ### To run a command-line utility:
 
 You can use a command-line utility, such as cURL or wget, to perform the HTTP requests.  We have provided a few files with sample XML representations in `src/test/resources`, so we will use those for testing our services.
@@ -85,7 +84,7 @@ You can use a command-line utility, such as cURL or wget, to perform the HTTP re
 
     * Create a customer
 
-            curl -X POST -T src/test/resources/add_customer.xml -H "Content-Type: text/xml" http://quickstart-cxf-rest.example.com/cxf/crm/customerservice/customers
+            curl -X POST -T src/test/resources/add_customer.xml -H "Content-Type: application/xml" http://quickstart-cxf-rest.example.com/cxf/crm/customerservice/customers
 
     * Retrieve the customer instance with id 123
 
@@ -93,12 +92,11 @@ You can use a command-line utility, such as cURL or wget, to perform the HTTP re
 
     * Update the customer instance with id 123
 
-            curl -X PUT -T src/test/resources/update_customer.xml -H "Content-Type: text/xml" http://quickstart-cxf-rest.example.com/cxf/crm/customerservice/customers
+            curl -X PUT -T src/test/resources/update_customer.xml -H "Content-Type: application/xml" http://quickstart-cxf-rest.example.com/cxf/crm/customerservice/customers
 
     * Delete the customer instance with id 123
 
              curl -X DELETE http://quickstart-cxf-rest.example.com/cxf/crm/customerservice/customers/123
-
 
 ### Integration Testing
 

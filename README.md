@@ -12,13 +12,11 @@ The REST service provides a customer service that supports the following operati
 
 When the application is deployed, you can access the REST service using a web browser.
 
-
 ### Building
 
 The example can be built with
 
     mvn clean install
-
 
 ### Running the example in fabric8
 
@@ -41,7 +39,6 @@ Then find the name of the pod that runs this quickstart, and output the logs fro
 You can also use the OpenShift [web console](https://docs.openshift.com/enterprise/3.1/getting_started/developers/developers_console.html#tutorial-video) to manage the
 running pods, and view logs and much more.
 
-
 ### Access services using a web browser
 
 You can use any browser to perform a HTTP GET.  This allows you to very easily test a few of the RESTful services we defined:
@@ -62,7 +59,6 @@ You can also access the XML representation for order 123 ...
 
 **Note:** if you use Safari, you will only see the text elements but not the XML tags - you can view the entire document with 'View Source'
 
-
 ### To run a command-line utility:
 
 You can use a command-line utility, such as cURL or wget, to perform the HTTP requests.  We have provided a few files with sample XML representations in `src/test/resources`, so we will use those for testing our services.
@@ -72,7 +68,7 @@ You can use a command-line utility, such as cURL or wget, to perform the HTTP re
 
     * Create a customer
 
-            curl -X POST -T src/test/resources/add_customer.xml -H "Content-Type: text/xml" http://quickstart-cxf-rest.f8/cxf/crm/customerservice/customers
+            curl -X POST -T src/test/resources/add_customer.xml -H "Content-Type: application/xml" http://quickstart-cxf-rest.f8/cxf/crm/customerservice/customers
 
     * Retrieve the customer instance with id 123
 
@@ -80,12 +76,11 @@ You can use a command-line utility, such as cURL or wget, to perform the HTTP re
 
     * Update the customer instance with id 123
 
-            curl -X PUT -T src/test/resources/update_customer.xml -H "Content-Type: text/xml" http://quickstart-cxf-rest.f8/cxf/crm/customerservice/customers
+            curl -X PUT -T src/test/resources/update_customer.xml -H "Content-Type: application/xml" http://quickstart-cxf-rest.f8/cxf/crm/customerservice/customers
 
     * Delete the customer instance with id 123
 
              curl -X DELETE http://quickstart-cxf-rest.f8/cxf/crm/customerservice/customers/123
-
 
 ### Running the example using OpenShift S2I template
 
@@ -98,7 +93,6 @@ The application can be run directly by first editing the template file and popul
 Alternatively the template file can be used to create an OpenShift application template by executing the command:
 
     oc create -f quickstart-template.json
-
 
 #### Integration Testing
 
