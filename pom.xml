@@ -33,8 +33,8 @@
 
     <!-- configure the versions you want to use here -->
     <fabric8.version>2.3.7.fuse-000036-redhat-1</fabric8.version>
-    <cxf.plugin.version>3.1.11-000176.fuse-000001</cxf.plugin.version>
-    <karaf.plugin.version>4.2.0.fuse-000180</karaf.plugin.version>
+    <cxf.plugin.version>3.1.11.000176-fuse-000001-redhat-2</cxf.plugin.version>
+    <karaf.plugin.version>4.2.0.fuse-000180-redhat-2</karaf.plugin.version>
 
     <!-- maven plugin versions -->
     <fabric8.maven.plugin.version>3.5.32.fuse-000040-redhat-1</fabric8.maven.plugin.version>
