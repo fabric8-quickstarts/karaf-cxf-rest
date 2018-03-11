@@ -35,6 +35,7 @@
     <fabric8.version>2.3.7.fuse-000020</fabric8.version>
     <cxf.plugin.version>3.1.11.fuse-000173</cxf.plugin.version>
     <karaf.plugin.version>4.2.0-700.fuse-000004</karaf.plugin.version>
+    <swagger.version>1.5.12</swagger.version>
 
     <!-- maven plugin versions -->
     <fabric8.maven.plugin.version>3.5.32.fuse-000025</fabric8.maven.plugin.version>
@@ -80,7 +81,7 @@
     <dependency>
       <groupId>io.swagger</groupId>
       <artifactId>swagger-jaxrs</artifactId>
-      <version>1.5.12</version>
+      <version>${swagger.version}</version>
       <optional>true</optional>
       <exclusions>
         <!-- avoid this old dependency which breaks CXF -->
