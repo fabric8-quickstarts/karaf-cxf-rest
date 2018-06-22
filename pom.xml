@@ -32,6 +32,7 @@
     <version.maven-bundle-plugin>2.3.7</version.maven-bundle-plugin>
 
     <!-- configure the versions you want to use here -->
+    <arquillian-cube.version>1.9.2</arquillian-cube.version>
     <fabric8.version>2.3.7.fuse-000036-redhat-2</fabric8.version>
     <cxf.plugin.version>3.1.11.000176-fuse-000001-redhat-2</cxf.plugin.version>
     <karaf.plugin.version>4.2.0.fuse-000180-redhat-2</karaf.plugin.version>
@@ -117,15 +118,27 @@
 
     <!-- testing -->
     <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
       <groupId>org.jboss.arquillian.junit</groupId>
       <artifactId>arquillian-junit-container</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>io.fabric8</groupId>
-      <artifactId>fabric8-arquillian</artifactId>
+      <groupId>org.arquillian.cube</groupId>
+      <artifactId>arquillian-cube-openshift</artifactId>
+      <version>${arquillian-cube.version}</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>io.fabric8</groupId>
+      <artifactId>kubernetes-assertions</artifactId>
+      <scope>test</scope>
+    </dependency>
+
     <dependency>
       <groupId>org.assertj</groupId>
       <artifactId>assertj-core</artifactId>
