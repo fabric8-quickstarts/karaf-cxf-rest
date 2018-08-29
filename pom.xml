@@ -36,7 +36,7 @@
 
     <!-- The following dependencies will be added to Fuse bom in next versions -->
     <arquillian-cube.version>1.9.2</arquillian-cube.version>
-    <cxf.plugin.version></cxf.plugin.version>
+    <cxf.plugin.version>3.1.11.fuse-710022-redhat-00001</cxf.plugin.version>
 
     <swagger.version>1.5.17</swagger.version>
 
