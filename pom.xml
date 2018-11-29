@@ -63,19 +63,23 @@
     <dependency>
       <groupId>org.apache.cxf</groupId>
       <artifactId>cxf-core</artifactId>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.cxf</groupId>
       <artifactId>cxf-rt-transports-http</artifactId>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.cxf</groupId>
       <artifactId>cxf-rt-frontend-jaxrs</artifactId>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.cxf</groupId>
       <artifactId>cxf-rt-rs-service-description</artifactId>
       <version>${cxf.plugin.version}</version>
+      <scope>provided</scope>
     </dependency>
 
     <!-- swagger -->
@@ -91,6 +95,7 @@
           <artifactId>jsr311-api</artifactId>
         </exclusion>
       </exclusions>
+      <scope>provided</scope>
     </dependency>
 
     <!-- Karaf microcontainer dependencies -->
@@ -186,7 +191,7 @@
               javax.ws.rs;version="[2,3)",
               javax.ws.rs.core;version="[2,3)",
               javax.ws.rs.ext;version="[2,3)",
-              javax.xml.bind.annotation,
+              javax.xml.bind.annotation;version="[2,3)",
               org.osgi.service.blueprint,
               io.swagger.jaxrs.config,
               io.swagger.jaxrs.listing,
@@ -280,24 +285,24 @@
         </executions>
         <configuration>
           <javase>1.8</javase>
-          <framework>framework</framework>
           <useReferenceUrls>true</useReferenceUrls>
           <archiveTarGz>false</archiveTarGz>
           <!-- do not include build output directory -->
           <includeBuildOutputDirectory>false</includeBuildOutputDirectory>
           <startupFeatures>
             <feature>framework</feature>
+          </startupFeatures>
+          <bootFeatures>
             <feature>jaas</feature>
-            <feature>log</feature>
-            <feature>management</feature>
             <feature>aries-blueprint</feature>
             <feature>cxf-jaxrs</feature>
-            <feature>cxf-rs-description-swagger2</feature>
             <feature>fabric8-karaf-checks</feature>
-          </startupFeatures>
-          <startupBundles>
-            <bundle>mvn:${project.groupId}/${project.artifactId}/${project.version}</bundle>
-          </startupBundles>
+            <feature>cxf-jackson</feature>
+            <feature>cxf-rs-description-swagger2</feature>
+          </bootFeatures>
+          <bootBundles>
+            <bundle>mvn:${project.groupId}/${project.artifactId}/${project.version};start-level=80</bundle>
+          </bootBundles>
         </configuration>
       </plugin>
 
