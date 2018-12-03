@@ -159,6 +159,13 @@
 
   </dependencies>
 
+  <repositories>
+    <repository>
+      <id>brew</id>
+      <url>http://download.eng.bos.redhat.com/brewroot/repos/jb-fuse-7-maven-build/latest/maven</url>
+    </repository>
+  </repositories>
+
   <build>
 
     <resources>
