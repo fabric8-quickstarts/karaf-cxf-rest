@@ -151,6 +151,12 @@
       <scope>test</scope>
     </dependency>
 
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
   </dependencies>
 
   <build>
@@ -172,11 +178,6 @@
           <source>1.8</source>
           <target>1.8</target>
         </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.18.1</version>
       </plugin>
 
       <!-- Need to setup the OSGi meta information here -->
@@ -285,14 +286,17 @@
         </executions>
         <configuration>
           <javase>1.8</javase>
+          <framework>framework</framework>
           <useReferenceUrls>true</useReferenceUrls>
           <archiveTarGz>false</archiveTarGz>
           <!-- do not include build output directory -->
           <includeBuildOutputDirectory>false</includeBuildOutputDirectory>
+          <installAllFeaturesByDefault>false</installAllFeaturesByDefault>
           <startupFeatures>
             <feature>framework</feature>
           </startupFeatures>
           <bootFeatures>
+            <feature>wrap</feature>
             <feature>jaas</feature>
             <feature>aries-blueprint</feature>
             <feature>cxf-jaxrs</feature>
