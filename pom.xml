@@ -294,13 +294,13 @@
           <installAllFeaturesByDefault>false</installAllFeaturesByDefault>
           <startupFeatures>
             <feature>framework</feature>
+            <feature>fabric8-karaf-checks</feature>
           </startupFeatures>
           <bootFeatures>
             <feature>wrap</feature>
             <feature>jaas</feature>
             <feature>aries-blueprint</feature>
             <feature>cxf-jaxrs</feature>
-            <feature>fabric8-karaf-checks</feature>
             <feature>cxf-jackson</feature>
             <feature>cxf-rs-description-swagger2</feature>
           </bootFeatures>
