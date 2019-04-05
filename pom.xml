@@ -32,11 +32,11 @@
     <version.maven-bundle-plugin>2.3.7</version.maven-bundle-plugin>
 
     <!-- configure the versions you want to use here -->
-    <fuse.version>7.3.0.fuse-730051</fuse.version>
+    <fuse.version>7.3.0.fuse-730051-redhat-00001</fuse.version>
 
     <!-- The following dependencies will be added to Fuse bom in next versions -->
     <arquillian-cube.version>1.9.2</arquillian-cube.version>
-    <cxf.plugin.version>3.2.7.fuse-730037</cxf.plugin.version>
+    <cxf.plugin.version>3.2.7.fuse-730037-redhat-00001</cxf.plugin.version>
 
     <swagger.version>1.5.17</swagger.version>
 
