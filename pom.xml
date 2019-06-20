@@ -22,7 +22,7 @@
 
   <groupId>io.fabric8.quickstarts</groupId>
   <artifactId>karaf-cxf-rest</artifactId>
-  <version>1.0.0.fuse-740016</version>
+  <version>1.0.0.fuse-740016-redhat-00001</version>
   <packaging>bundle</packaging>
   <name>Fabric8 :: Quickstarts :: Karaf :: CXF REST</name>
   <description>Karaf example running a REST sevice using CXF</description>
@@ -32,11 +32,11 @@
     <version.maven-bundle-plugin>2.3.7</version.maven-bundle-plugin>
 
     <!-- configure the versions you want to use here -->
-    <fuse.version>7.4.0.fuse-740032</fuse.version>
+    <fuse.version>7.4.0.fuse-740032-redhat-00001</fuse.version>
 
     <!-- The following dependencies will be added to Fuse bom in next versions -->
     <arquillian-cube.version>1.9.2</arquillian-cube.version>
-    <cxf.plugin.version>3.2.7.fuse-740024</cxf.plugin.version>
+    <cxf.plugin.version>3.2.7.fuse-740024-redhat-00001</cxf.plugin.version>
 
     <swagger.version>1.5.17</swagger.version>
 
