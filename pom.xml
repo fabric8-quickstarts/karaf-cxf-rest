@@ -303,6 +303,7 @@
             <feature>cxf-jaxrs</feature>
             <feature>cxf-jackson</feature>
             <feature>cxf-rs-description-swagger2</feature>
+            <feature>cxf-commands</feature>
           </bootFeatures>
           <bootBundles>
             <bundle>mvn:${project.groupId}/${project.artifactId}/${project.version};start-level=80</bundle>
