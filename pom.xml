@@ -38,7 +38,7 @@
     <arquillian-cube.version>1.9.2</arquillian-cube.version>
     <cxf.plugin.version>3.2.7.fuse-730019-redhat-00001</cxf.plugin.version>
 
-    <swagger.version>1.5.17</swagger.version>
+    <swagger.version>1.5.18.fuse70-1-redhat-1</swagger.version>
 
     <!-- maven plugin versions -->
     <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
