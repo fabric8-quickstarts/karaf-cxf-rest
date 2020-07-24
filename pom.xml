@@ -32,13 +32,13 @@
     <version.maven-bundle-plugin>2.3.7</version.maven-bundle-plugin>
 
     <!-- configure the versions you want to use here -->
-    <fuse.bom.version>7.3.0.fuse-730058-redhat-00001</fuse.bom.version>
+    <fuse.bom.version>7.8.0.fuse-sb2-780004</fuse.bom.version>
 
     <!-- The following dependencies will be added to Fuse bom in next versions -->
     <arquillian-cube.version>1.18.2</arquillian-cube.version>
-    <cxf.plugin.version>3.2.7.fuse-730019-redhat-00001</cxf.plugin.version>
+    <cxf.plugin.version>3.3.6.fuse-780004</cxf.plugin.version>
 
-    <swagger.version>1.5.18.fuse70-1-redhat-1</swagger.version>
+    <swagger-java-version>1.5.18.fuse70-1-redhat-1</swagger-java-version>
 
     <!-- maven plugin versions -->
     <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
@@ -51,6 +51,14 @@
       <dependency>
         <groupId>org.jboss.redhat-fuse</groupId>
         <artifactId>fuse-karaf-bom</artifactId>
+        <version>${fuse.bom.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <!-- Spring Boot (2) BOM is needed to get kubernetes-assertions and arquillian versions -->
+      <dependency>
+        <groupId>org.jboss.redhat-fuse</groupId>
+        <artifactId>fuse-springboot-bom</artifactId>
         <version>${fuse.bom.version}</version>
         <type>pom</type>
         <scope>import</scope>
@@ -86,7 +94,7 @@
     <dependency>
       <groupId>io.swagger</groupId>
       <artifactId>swagger-jaxrs</artifactId>
-      <version>${swagger.version}</version>
+      <version>${swagger-java-version}</version>
       <optional>true</optional>
       <exclusions>
         <!-- avoid this old dependency which breaks CXF -->
