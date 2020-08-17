@@ -32,7 +32,7 @@
     <version.maven-bundle-plugin>2.3.7</version.maven-bundle-plugin>
 
     <!-- configure the versions you want to use here -->
-    <fuse.bom.version>7.8.0.fuse-sb2-780004</fuse.bom.version>
+    <fuse.bom.version>7.8.0.fuse-sb2-780010</fuse.bom.version>
 
     <!-- The following dependencies will be added to Fuse bom in next versions -->
     <arquillian-cube.version>1.18.2</arquillian-cube.version>
@@ -55,7 +55,7 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-      <!-- Spring Boot (2) BOM is needed to get kubernetes-assertions and arquillian versions -->
+      <!-- Spring Boot (2) BOM is needed to get arquillian versions -->
       <dependency>
         <groupId>org.jboss.redhat-fuse</groupId>
         <artifactId>fuse-springboot-bom</artifactId>
@@ -148,14 +148,13 @@
     </dependency>
     <dependency>
       <groupId>io.fabric8</groupId>
-      <artifactId>kubernetes-assertions</artifactId>
+      <artifactId>kubernetes-model</artifactId>
       <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.assertj</groupId>
-      <artifactId>assertj-core</artifactId>
-      <version>2.4.1</version>
+      <groupId>io.fabric8</groupId>
+      <artifactId>kubernetes-client</artifactId>
       <scope>test</scope>
     </dependency>
 
