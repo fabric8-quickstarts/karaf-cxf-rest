@@ -244,6 +244,7 @@
         <version>${maven-surefire-plugin.version}</version>
         <inherited>true</inherited>
         <configuration>
+          <rerunFailingTestsCount>15</rerunFailingTestsCount>
           <excludes>
             <exclude>**/*KT.java</exclude>
           </excludes>
