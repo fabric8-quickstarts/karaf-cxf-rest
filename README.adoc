@@ -52,7 +52,7 @@ $ cd my_openshift/karaf-cxf-rest
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ mvn clean -DskipTests fabric8:deploy -Popenshift
+$ mvn clean -DskipTests oc:deploy -Popenshift
 ----
 
 [#single-node-without-preinstalled-images]
@@ -92,7 +92,7 @@ $ cd my_openshift/karaf-cxf-rest
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ mvn clean -DskipTests fabric8:deploy -Popenshift -Dfabric8.generator.fromMode=istag -Dfabric8.generator.from=MY_PROJECT_NAME/fuse7-karaf-openshift:1.7
+$ mvn clean -DskipTests oc:deploy -Popenshift -Djkube.generator.fromMode=istag -Djkube.generator.from=MY_PROJECT_NAME/fuse7-karaf-openshift:1.7
 ----
 
 == Accessing the REST service
@@ -101,7 +101,7 @@ When the example is running, a REST service is available.  This allows you to ve
 
 If you run the example on a single-node OpenShift cluster, then the REST service is exposed at 'http://karaf-cxf-rest-MY_PROJECT_NAME.OPENSHIFT_IP_ADDR.nip.io/cxf/`.
 
-Notice: As it depends on your OpenShift setup, the hostname (route) might vary. Verify with `oc get routes` which hostname is valid for you. Add the `-Dfabric8.deploy.createExternalUrls=true` option to your Maven commands if you want it to deploy a Route configuration for the service.
+Notice: As it depends on your OpenShift setup, the hostname (route) might vary. Verify with `oc get routes` which hostname is valid for you. Add the `-Djkube.deploy.createExternalUrls=true` option to your Maven commands if you want it to deploy a Route configuration for the service.
 
 Use this URL to display the root of the REST service, which also allows to access the WADL of the service:
 
