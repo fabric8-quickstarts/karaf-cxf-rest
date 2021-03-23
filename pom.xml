@@ -295,7 +295,7 @@
           <installAllFeaturesByDefault>false</installAllFeaturesByDefault>
           <startupFeatures>
             <feature>framework</feature>
-            <feature>fabric8-karaf-checks</feature>
+            <feature>jkube-karaf-checks</feature>
           </startupFeatures>
           <bootFeatures>
             <feature>wrap</feature>
