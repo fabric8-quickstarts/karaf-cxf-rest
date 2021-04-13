@@ -33,7 +33,7 @@
 
     <!-- configure the versions you want to use here -->
     <fuse.bom.version>7.8.0.fuse-sb2-780033</fuse.bom.version>
-    <docker.image.version>1.7</docker.image.version>
+    <docker.image.version>1.9</docker.image.version>
 
     <!-- The following dependencies will be added to Fuse bom in next versions -->
     <arquillian-cube.version>1.18.2</arquillian-cube.version>
