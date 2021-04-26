@@ -142,7 +142,7 @@ You can use a command-line utility, such as cURL or wget, to perform the HTTP re
 
 == Integration Testing
 
-The example includes a https://github.com/fabric8io/fabric8/tree/master/components/fabric8-arquillian[fabric8 arquillian] Kubernetes Integration Test.
+The example includes a Kubernetes Integration Test.
 Once the container image has been built and deployed in Kubernetes, the integration test can be run with:
 
 [source,bash,options="nowrap",subs="attributes+"]
@@ -150,7 +150,7 @@ Once the container image has been built and deployed in Kubernetes, the integrat
 mvn test -Dtest=*KT
 ----
 
-The test is disabled by default and has to be enabled using `-Dtest`. https://fabric8.io/guide/testing.html[Integration Testing] and https://fabric8.io/guide/arquillian.html[Fabric8 Arquillian Extension] provide more information on writing full fledged black box integration tests for Kubernetes.
+The test is disabled by default and has to be enabled using `-Dtest`.
 
 == More details
 

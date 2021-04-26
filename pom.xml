@@ -32,11 +32,10 @@
     <version.maven-bundle-plugin>2.3.7</version.maven-bundle-plugin>
 
     <!-- configure the versions you want to use here -->
-    <fuse.bom.version>7.8.0.fuse-sb2-780033</fuse.bom.version>
+    <fuse.bom.version>7.9.0.fuse-sb2-790048</fuse.bom.version>
     <docker.image.version>1.9</docker.image.version>
 
     <!-- The following dependencies will be added to Fuse bom in next versions -->
-    <arquillian-cube.version>1.18.2</arquillian-cube.version>
     <cxf.plugin.version>3.3.6.fuse-780004</cxf.plugin.version>
 
     <swagger-java-version>1.5.18.fuse70-1-redhat-1</swagger-java-version>
@@ -128,17 +127,7 @@
       <artifactId>junit</artifactId>
       <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>org.jboss.arquillian.junit</groupId>
-      <artifactId>arquillian-junit-container</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.arquillian.cube</groupId>
-      <artifactId>arquillian-cube-openshift</artifactId>
-      <version>${arquillian-cube.version}</version>
-      <scope>test</scope>
-    </dependency>
+
     <dependency>
       <groupId>io.fabric8</groupId>
       <artifactId>kubernetes-model</artifactId>
@@ -148,6 +137,13 @@
     <dependency>
       <groupId>io.fabric8</groupId>
       <artifactId>kubernetes-client</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>io.fabric8</groupId>
+      <artifactId>openshift-client</artifactId>
+      <version>4.6.2</version>
       <scope>test</scope>
     </dependency>
 
