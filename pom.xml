@@ -22,7 +22,7 @@
 
   <groupId>io.fabric8.quickstarts</groupId>
   <artifactId>karaf-cxf-rest</artifactId>
-  <version>7.9.0.fuse-sb2-790035</version>
+  <version>7.9.0.fuse-sb2-790035-redhat-00001</version>
   <packaging>bundle</packaging>
   <name>Fabric8 :: Quickstarts :: Karaf :: CXF REST</name>
   <description>Karaf example running a REST sevice using CXF</description>
@@ -32,13 +32,13 @@
     <version.maven-bundle-plugin>2.3.7</version.maven-bundle-plugin>
 
     <!-- configure the versions you want to use here -->
-    <fuse.bom.version>7.9.0.fuse-sb2-790049</fuse.bom.version>
+    <fuse.bom.version>7.9.0.fuse-sb2-790049-redhat-00001</fuse.bom.version>
     <docker.image.version>1.9</docker.image.version>
 
     <!-- The following dependencies will be added to Fuse bom in next versions -->
-    <cxf.plugin.version>3.3.6.fuse-790035</cxf.plugin.version>
+    <cxf.plugin.version>3.3.6.fuse-790035-redhat-00001</cxf.plugin.version>
 
-    <swagger-java-version>1.5.24.fuse-790022</swagger-java-version>
+    <swagger-java-version>1.5.24.fuse-790022-redhat-00001</swagger-java-version>
 
     <!-- maven plugin versions -->
     <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
@@ -316,6 +316,8 @@
       </plugin>
     </plugins>
 
+    <pluginManagement />
+
   </build>
 
   <profiles>
@@ -390,48 +392,15 @@
   </profiles>
 
   <repositories>
-    <repository>
-      <id>redhat-ga-repository</id>
-      <url>https://maven.repository.redhat.com/ga</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>redhat-ea-repository</id>
-      <url>https://maven.repository.redhat.com/earlyaccess/all</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
+    
+    
   </repositories>
 
   <pluginRepositories>
-    <pluginRepository>
-      <id>redhat-ga-repository</id>
-      <url>https://maven.repository.redhat.com/ga</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </pluginRepository>
-    <pluginRepository>
-      <id>redhat-ea-repository</id>
-      <url>https://maven.repository.redhat.com/earlyaccess/all</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </pluginRepository>
+    
+    
   </pluginRepositories>
 </project>
+<!--
+Modified by POM Manipulation Extension for Maven 4.2 ( SHA: cfe5b3db )
+-->
