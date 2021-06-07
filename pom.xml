@@ -38,7 +38,7 @@
     <!-- The following dependencies will be added to Fuse bom in next versions -->
     <cxf.plugin.version>3.3.6.fuse-780004</cxf.plugin.version>
 
-    <swagger-java-version>1.5.18.fuse70-1-redhat-1</swagger-java-version>
+    <swagger-java-version>1.6.2</swagger-java-version>
 
     <!-- maven plugin versions -->
     <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
