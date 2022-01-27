@@ -33,7 +33,7 @@
 
     <!-- configure the versions you want to use here -->
     <fuse.bom.version>7.9.0.fuse-sb2-790048</fuse.bom.version>
-    <docker.image.version>1.10</docker.image.version>
+    <docker.image.version>1.11</docker.image.version>
 
     <!-- The following dependencies will be added to Fuse bom in next versions -->
     <cxf.plugin.version>3.3.6.fuse-780004</cxf.plugin.version>
@@ -369,7 +369,7 @@
                     </property>
                     <property>
                       <name>rht.prod_ver</name>
-                      <value>7.10</value>
+                      <value>7.11</value>
                     </property>
                     <property>
                       <name>rht.comp</name>
