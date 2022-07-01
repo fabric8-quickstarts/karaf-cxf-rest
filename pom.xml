@@ -33,7 +33,7 @@
 
     <!-- configure the versions you want to use here -->
     <arquillian-cube.version>1.9.2</arquillian-cube.version>
-    <cxf.version>3.1.9</cxf.version>
+    <cxf.version>3.1.11</cxf.version>
     <fabric8.version>2.3.2</fabric8.version>
     <jackson.version>2.8.9</jackson.version>
     <junit.version>4.12</junit.version>
