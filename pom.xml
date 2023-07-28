@@ -32,11 +32,11 @@
     <version.maven-bundle-plugin>2.3.7</version.maven-bundle-plugin>
 
     <!-- configure the versions you want to use here -->
-    <fuse.bom.version>7.12.0.fuse-7_12_0-00016</fuse.bom.version>
+    <fuse.bom.version>7.12.0.fuse-7_12_0-00016-redhat-00001</fuse.bom.version>
     <docker.image.version>1.12</docker.image.version>
 
     <!-- The following dependencies will be added to Fuse bom in next versions -->
-    <cxf.plugin.version>3.3.6.fuse-7_12_0-00020</cxf.plugin.version>
+    <cxf.plugin.version>3.3.6.fuse-7_12_0-00020-redhat-00001</cxf.plugin.version>
 
     <swagger-java-version>1.6.2</swagger-java-version>
 
